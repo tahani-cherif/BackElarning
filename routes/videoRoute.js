@@ -2,6 +2,7 @@ const express=require('express')
 const {createvideoValidator,
     updatevideoValidator,
     getvideoValidator,
+    getvideocourValidator
        }=require('../utils/validators/videoValidator');
 
 
@@ -19,6 +20,8 @@ router.route('/').get(getvideos)
                  .post(upload('./video').single('videoUrl'),createvideoValidator,createvideo)
 
 router.route('/:id').get(getvideoValidator,getvideo)
-                    .put(upload('./image').single('image'),updatevideoValidator,updatevideo)
+                    .put(upload('./video').single('image'),updatevideoValidator,updatevideo)
+        
+router.route('/bycour/:id').get(getvideocourValidator,getvideos)
 
 module.exports = router;

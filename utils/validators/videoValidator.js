@@ -5,6 +5,10 @@ exports.getvideoValidator=[
     check('id').isMongoId().withMessage('Invalid video id format'),
     validatorMiddleware,
 ];
+exports.getvideocourValidator=[
+    check('id').isMongoId().withMessage('Invalid cour id format'),
+    validatorMiddleware,
+];
 
 exports.createvideoValidator=[
 

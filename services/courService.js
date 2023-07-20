@@ -14,8 +14,8 @@ exports.getcours=asyncHandler(async(req,res) => {
     const skip=(page-1)*limit;
     const cour = await courmodel.find({}).populate({
       path: 'createur',
-      select: ['fullName', '_id','picture'],
-  });;
+      select: ['fullName', '_id','image'],
+  });
     res.status(200).json({results:cour.length,page,data:cour})
   });
 
@@ -24,7 +24,10 @@ exports.getcours=asyncHandler(async(req,res) => {
 // @access  Private
 exports.getcour = asyncHandler(async(req,res,next)=>{
   const {id}=req.params; 
-  const cour = await courmodel.findById(id);
+  const cour = await courmodel.findById(id).populate({
+    path: 'createur',
+    select: ['fullName', '_id','image'],
+});
   if(!cour)
   {
     return   next(new ApiError(`cour not found for this id ${id}`,404)); 
@@ -118,3 +121,36 @@ setTimeout(() => {
 }, 1000)
 
 });
+
+// @desc    get  cour by user 
+// @route   GET api/cour/getalluser
+// @access  Private
+exports.getAllCoursesuser =asyncHandler(async(req,res,next)=>{
+  const id = req.params.id;
+  const cour = []
+
+  const user = await usermodel.findOne({ _id: id });
+  if(!user)
+  {
+    return   next(new ApiError(`user not found for this id ${id}`,404)); 
+  }
+      user.Courses.forEach(async (item) => {
+          const courses = await courmodel.find({ _id: item });
+          cour.push(courses[0])
+      })
+      setTimeout(() => {
+        res.status(200).json({data:cour})
+      }, 1000)
+
+});
+
+// @desc    get  cour by formateur 
+// @route   GET api/cour/getallformateur
+// @access  Private
+exports.getAllCourseformateur =asyncHandler(async(req,res,next)=>{
+  const id = req.params.id;
+  const courses = await courmodel.find({ createur: id });
+  res.status(201).json({data:courses})
+
+});
+

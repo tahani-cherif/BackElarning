@@ -62,7 +62,9 @@ app.use('/image', express.static('./image'))
 
 app.use('/pdf', express.static('./pdf'))
 
+//static Images video
 
+app.use('/video', express.static('./video'))
 
 app.all("*",(req,res,next)=>{
     //create error and send it to error handling middleware

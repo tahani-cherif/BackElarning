@@ -8,11 +8,8 @@ const ApiError=require('../utils/apiError')
 // @route   GET api/video/
 // @access  Private
 exports.getvideos=asyncHandler(async(req,res) => {
-    const page=req.query.page*1 || 1;
-    const limit=req.query.limit*1 ||5;
-    const skip=(page-1)*limit;
     const video = await videomodel.find({});
-    res.status(200).json({results:video.length,page,data:video})
+    res.status(200).json({results:video.length,data:video})
   });
 
 // @desc    Get specific video by d
@@ -60,3 +57,13 @@ exports.updatevideo =asyncHandler(async(req,res,next)=>{
   res.status(200).json({data: video});  
 })
 
+// @desc    Get all video by cour
+// @route   GET api/video/bycour/id
+// @access  Private
+exports.getvideos=asyncHandler(async(req,res) => {
+  const video = await videomodel.find({course:req.params.id}).populate({
+    path: 'course',
+    select: ['titre', '_id'],
+});
+  res.status(200).json({results:video.length,data:video})
+});

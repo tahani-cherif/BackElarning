@@ -45,7 +45,7 @@ exports.createuser=asyncHandler(async(req,res)=>{
 // @access  Private
 exports.updateuser =asyncHandler(async(req,res,next)=>{
   const {id}=req.params;
-  req.body.imag=req?.file?.path|| req.body.imag 
+  req.body.image=req?.file?.path|| req.body.image 
   const users = await usermodel.findOneAndUpdate(
     {_id:id},
      req.body,

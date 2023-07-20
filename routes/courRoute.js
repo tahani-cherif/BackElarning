@@ -2,7 +2,8 @@ const express=require('express')
 const {getcourValidator,
     createcourValidator,
     updatecourValidator,
-    deletecourValidator,                                
+    deletecourValidator, 
+    getallcouruserValidator                               
        }=require('../utils/validators/courValidator');
 
 
@@ -13,7 +14,9 @@ const {getcours,
     deletecour,
     countcour,
     topcour,
-    countbyfomateur
+    countbyfomateur,
+    getAllCoursesuser,
+    getAllCourseformateur,
     }=require('../services/courService');
 
 
@@ -29,6 +32,9 @@ router.route('/').get(getcours)
 router.route('/:id').get(getcourValidator,getcour)
                     .put(upload('./image').single('image'),updatecourValidator,updatecour)
                     .delete(deletecourValidator,deletecour);
+        
+router.route("/getallcouruser/:id").get(getallcouruserValidator,getAllCoursesuser)
+router.route("/getallcourformateur/:id").get(getallcouruserValidator,getAllCourseformateur)
 
 
 

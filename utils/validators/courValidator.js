@@ -5,6 +5,10 @@ exports.getcourValidator=[
     check('id').isMongoId().withMessage('Invalid cour id format'),
     validatorMiddleware,
 ];
+exports.getallcouruserValidator=[
+    check('id').isMongoId().withMessage('Invalid user id format'),
+    validatorMiddleware,
+];
 
 exports.createcourValidator=[
 

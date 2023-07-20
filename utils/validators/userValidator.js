@@ -37,13 +37,7 @@ exports.updateuserValidator=[
     check('age').optional().notEmpty().withMessage('age required'),
     check('phoneNumber').optional().notEmpty().withMessage('phone number required'),
     check('email').optional().notEmpty().withMessage('email required')
-                            .isEmail().withMessage('must be fomrat email')
-                            .custom((val) =>
-                                User.findOne({ email: val }).then((user) => {
-                                    if (user) {
-                                    return Promise.reject(new Error('E-mail already in user'));
-                                    }
-                                })),
+                            .isEmail().withMessage('must be fomrat email'),
     check('role').optional().isIn(['formateur','admin','user']).withMessage('role must be eleve | admin | user |formateur'), 
     validatorMiddleware,
 ];
