@@ -1,0 +1,1355 @@
+{
+	"info": {
+		"_postman_id": "e7a83221-3ce6-4677-83be-5e4481e98b1a",
+		"name": "elarning",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19871662"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "get all user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/user/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/user/6491dbd6eb15b6d0dcf8b97a",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"6491dbd6eb15b6d0dcf8b97a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "last_name",
+									"value": "cherif",
+									"type": "text"
+								},
+								{
+									"key": "first_name",
+									"value": "tahani",
+									"type": "text"
+								},
+								{
+									"key": "fullName",
+									"value": "tahani cherif",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "cheriftahani92@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "age",
+									"value": "22",
+									"type": "text"
+								},
+								{
+									"key": "phoneNumber",
+									"value": "27711622",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/User/Downloads/341288808_207340382034122_4141079653462818026_n.jpg"
+								},
+								{
+									"key": "passwordconfirm",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/user/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "last_name",
+									"value": "cherif",
+									"type": "text"
+								},
+								{
+									"key": "first_name",
+									"value": "tahani",
+									"type": "text"
+								},
+								{
+									"key": "fullName",
+									"value": "tahani cherif",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "cheriftahani92@gmail.com",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "role",
+									"value": "user",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "age",
+									"value": "23",
+									"type": "text"
+								},
+								{
+									"key": "phoneNumber",
+									"value": "27711622",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/User/Downloads/341288808_207340382034122_4141079653462818026_n.jpg",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/user/6491dbd6eb15b6d0dcf8b97a",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"6491dbd6eb15b6d0dcf8b97a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "last_name",
+									"value": "cherif",
+									"type": "text"
+								},
+								{
+									"key": "first_name",
+									"value": "tahani",
+									"type": "text"
+								},
+								{
+									"key": "fullName",
+									"value": "tahani cherif",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "cheriftahani92@gmail.com",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "role",
+									"value": "user",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "22",
+									"type": "text"
+								},
+								{
+									"key": "phoneNumber",
+									"value": "27711622",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/User/Downloads/341288808_207340382034122_4141079653462818026_n.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/user/6491d8deac5e7a75fc516cb3",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"6491d8deac5e7a75fc516cb3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "count user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/user/count/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"count",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cour",
+			"item": [
+				{
+					"name": "get all cour",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/cour/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cour",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one cour",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/cour/6491f1e392c29ee0da0fb30e",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cour",
+								"6491f1e392c29ee0da0fb30e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create cour",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "titre",
+									"value": "React js",
+									"type": "text"
+								},
+								{
+									"key": "bioFormateur",
+									"value": "test test ",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "test test test ",
+									"type": "text"
+								},
+								{
+									"key": "categorie",
+									"value": "Web development",
+									"type": "text"
+								},
+								{
+									"key": "createur",
+									"value": "6491dbd6eb15b6d0dcf8b97a",
+									"type": "text"
+								},
+								{
+									"key": "actual_Price",
+									"value": "40",
+									"type": "text"
+								},
+								{
+									"key": "discount_Price",
+									"value": "30",
+									"type": "text"
+								},
+								{
+									"key": "ce_que_vous_apprenez",
+									"value": "tes tes test ",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/User/Downloads/310316328_645996573868576_3417585154563037558_n.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/cour/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cour",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update cour",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "titre",
+									"value": "React js",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "bioFormateur",
+									"value": "test test ",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "test test test ",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "categorie",
+									"value": "Web development",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "createur",
+									"value": "6491dbd6eb15b6d0dcf8b97a",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "actual_Price",
+									"value": "40",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "discount_Price",
+									"value": "30",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "ce_que_vous_apprenez",
+									"value": "tes tes test ",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								},
+								{
+									"key": "isDeleted",
+									"value": "false",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/cour/649213388cd826c634dbbbf7",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cour",
+								"649213388cd826c634dbbbf7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete cour",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "last_name",
+									"value": "cherif",
+									"type": "text"
+								},
+								{
+									"key": "first_name",
+									"value": "tahani",
+									"type": "text"
+								},
+								{
+									"key": "fullName",
+									"value": "tahani cherif",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "cheriftahani92@gmail.com",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "role",
+									"value": "user",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "22",
+									"type": "text"
+								},
+								{
+									"key": "phoneNumber",
+									"value": "27711622",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/User/Downloads/341288808_207340382034122_4141079653462818026_n.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/cour/6491f1e392c29ee0da0fb30e",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cour",
+								"6491f1e392c29ee0da0fb30e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "count cour",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/cour/count/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cour",
+								"count",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "top 5 cour",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/cour/top/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cour",
+								"top",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "count cour by formateur",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/cour/countcourbyformateur/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cour",
+								"countcourbyformateur",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all cour by user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/cour/getallcouruser/6491dbd6eb15b6d0dcf8b97a",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cour",
+								"getallcouruser",
+								"6491dbd6eb15b6d0dcf8b97a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all cour by formateur",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/cour/getallcourformateur/6491dbd6eb15b6d0dcf8b97a",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cour",
+								"getallcourformateur",
+								"6491dbd6eb15b6d0dcf8b97a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "video",
+			"item": [
+				{
+					"name": "get all video",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/video",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"video"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one video",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/video/649201fe516ce582087a059f",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"video",
+								"649201fe516ce582087a059f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get video by cour",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/video/bycour/6491f1e392c29ee0da0fb30e",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"video",
+								"bycour",
+								"6491f1e392c29ee0da0fb30e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create video",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "titre",
+									"value": "video 1",
+									"type": "text"
+								},
+								{
+									"key": "dure",
+									"value": "60",
+									"type": "text"
+								},
+								{
+									"key": "ordre",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Web development",
+									"type": "text"
+								},
+								{
+									"key": "videoUrl",
+									"type": "file",
+									"src": "/C:/Users/User/Videos/Captures/Apache NetBeans IDE 14 2023-06-16 13-26-16.mp4"
+								},
+								{
+									"key": "coatch",
+									"value": "6491dbd6eb15b6d0dcf8b97a",
+									"type": "text"
+								},
+								{
+									"key": "comments",
+									"value": "30",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "course",
+									"value": "6491f1e392c29ee0da0fb30e",
+									"type": "text"
+								},
+								{
+									"key": "categorie",
+									"value": "Web development",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/video/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"video",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update video",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "titre",
+									"value": "video 1",
+									"type": "text"
+								},
+								{
+									"key": "dure",
+									"value": "60",
+									"type": "text"
+								},
+								{
+									"key": "ordre",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Web development",
+									"type": "text"
+								},
+								{
+									"key": "videoUrl",
+									"type": "file",
+									"src": "/C:/Users/User/Videos/Captures/Apache NetBeans IDE 14 2023-06-16 13-26-16.mp4",
+									"disabled": true
+								},
+								{
+									"key": "coatch",
+									"value": "6491dbd6eb15b6d0dcf8b97a",
+									"type": "text"
+								},
+								{
+									"key": "comments",
+									"value": "30",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "course",
+									"value": "6491f1e392c29ee0da0fb30e",
+									"type": "text"
+								},
+								{
+									"key": "categorie",
+									"value": "Web development",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/video/649201fe516ce582087a059f",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"video",
+								"649201fe516ce582087a059f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "exercice",
+			"item": [
+				{
+					"name": "get all exercice",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/exercice",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"exercice"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one exercice",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/exercice/64920ecb6300ef5319bf2edd",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"exercice",
+								"64920ecb6300ef5319bf2edd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create exercice",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "description",
+									"value": "Web development",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/User/Downloads/Report.pdf"
+								},
+								{
+									"key": "createur",
+									"value": "6491dbd6eb15b6d0dcf8b97a",
+									"type": "text"
+								},
+								{
+									"key": "course",
+									"value": "6491f1e392c29ee0da0fb30e",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/exercice/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"exercice",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update exercice",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "description",
+									"value": "Web developmentffff",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/User/Downloads/Report.pdf"
+								},
+								{
+									"key": "createur",
+									"value": "6491dbd6eb15b6d0dcf8b97a",
+									"type": "text"
+								},
+								{
+									"key": "course",
+									"value": "6491f1e392c29ee0da0fb30e",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/exercice/64920ecb6300ef5319bf2edd",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"exercice",
+								"64920ecb6300ef5319bf2edd"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "authentification",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"cheriftahani92@gmail.com\",\r\n    \"password\":\"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PASSWORD RECOVERY",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"cheriftahani92@gmail.com\",\r\n    \"OTP\":\"1234567\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/auth/passwordrecovery",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"passwordrecovery"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "singup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "last_name",
+									"value": "ben brahim",
+									"type": "text"
+								},
+								{
+									"key": "first_name",
+									"value": "ali",
+									"type": "text"
+								},
+								{
+									"key": "fullName",
+									"value": "ali ben brahim",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "alibenbrahim@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "age",
+									"value": "25",
+									"type": "text"
+								},
+								{
+									"key": "phoneNumber",
+									"value": "27711622",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/User/Downloads/tt.jpg"
+								},
+								{
+									"key": "passwordconfirm",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/auth/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "commentaire",
+			"item": [
+				{
+					"name": "get all commentaire",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/commentaire/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"commentaire",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create comment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\":\"test\",\r\n    \"postId\": \"649201fe516ce582087a059f\",\r\n    \"commentBy\":\"6491dbd6eb15b6d0dcf8b97a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/commentaire/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"commentaire",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update commentaire",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\":\"testrrr\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/commentaire/64923355ba8a51e46567b0b1",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"commentaire",
+								"64923355ba8a51e46567b0b1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete commentaire",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/commentaire/649234679cc432a7d1a6edd3",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"commentaire",
+								"649234679cc432a7d1a6edd3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/commentaire/649232f9968c5f17b24cb561",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"commentaire",
+								"649232f9968c5f17b24cb561"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "category",
+			"item": [
+				{
+					"name": "get all category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/category/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"category",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"category\":\"test\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/category/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"category",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete category",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/category/649dc39ad74fcaa9baaffe85",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"category",
+								"649dc39ad74fcaa9baaffe85"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/category/649dc39ad74fcaa9baaffe85",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"category",
+								"649dc39ad74fcaa9baaffe85"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
