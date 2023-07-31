@@ -14,6 +14,16 @@ exports.getcommentaires=asyncHandler(async(req,res) => {
     const commentaire = await commentairemodel.find({});
     res.status(200).json({results:commentaire.length,page,data:commentaire})
   });
+  // @desc    Get  commentaire by video
+// @route   GET api/commentaire/video/:id
+// @access  Private
+exports.getcommentairesbyvideo=asyncHandler(async(req,res) => {
+  const commentaire = await commentairemodel.find({postId:req.params.id}).populate({
+    path: "commentBy",
+    select: ["fullName","image","_id"],
+  });
+  res.status(200).json({results:commentaire.length,data:commentaire})
+});
 
 // @desc    Get specific commentaire by d
 // @route   GET api/commentaire/:id

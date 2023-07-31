@@ -31,7 +31,7 @@ const VideosSchema = new mongoose.Schema({
     },
     coatch: {
         type: mongoose.Types.ObjectId,
-        ref: "use",
+        ref: "user",
         require:[true,'user require'],
        
     },

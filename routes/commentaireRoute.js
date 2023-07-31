@@ -11,6 +11,7 @@ const {getcommentaires,
     createcommentaire,
         updatecommentaire,
         deletecommentaire,
+        getcommentairesbyvideo
     }=require('../services/commentaireService');
 
 
@@ -23,5 +24,6 @@ router.route('/').get(getcommentaires)
 router.route('/:id').get(getcommentValidator,getcommentaire)
                     .put(updatecommentValidator,updatecommentaire)
                     .delete(deletecommentValidator,deletecommentaire);
+router.route('/video/:id').get(getcommentairesbyvideo)
 
 module.exports = router;

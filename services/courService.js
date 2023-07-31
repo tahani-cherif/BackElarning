@@ -154,3 +154,16 @@ exports.getAllCourseformateur =asyncHandler(async(req,res,next)=>{
 
 });
 
+
+// @desc    search cour by name
+// @route   GET api/cour/getcoursearch
+// @access  Private
+exports.getcourssearchbyname =asyncHandler(async(req,res,next)=>{
+  const search = req.query.search
+  const cour = await courmodel.find({ titre: new RegExp(search, 'i') })
+//   .populate({
+//     path: 'createur',
+//     select: ['fullName','_id'],
+// })
+  res.status(200).json({data:cour})
+});

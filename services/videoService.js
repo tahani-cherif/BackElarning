@@ -11,12 +11,15 @@ exports.getvideos = asyncHandler(async (req, res) => {
   res.status(200).json({ results: video.length, data: video });
 });
 
-// @desc    Get specific video by d
+// @desc    Get specific video by id
 // @route   GET api/video/:id
 // @access  Private
 exports.getvideo = asyncHandler(async (req, res, next) => {
   const { id } = req.params;
-  const video = await videomodel.findById(id);
+  const video = await videomodel.findById(id).populate({
+    path: "coatch",
+    select: ["fullName", "_id"],
+  });
   if (!video) {
     return next(new ApiError(`video not found for this id ${id}`, 404));
   }

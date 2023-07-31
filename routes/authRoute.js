@@ -7,7 +7,8 @@ const {signupValidator,
 
 const {signup,
       login,
-      sendEmail
+      sendEmail,
+      sendEmailContact
     }=require('../services/authService');
 
 
@@ -18,5 +19,6 @@ const {upload}=require('../middlewares/imageMiddmeware')
 router.route('/signup').post(upload('./image').single('image'),signupValidator,signup);
 router.route('/login').post(loginValidator,login);
 router.route('/passwordrecovery').post(EnvoyerEmailValidator,sendEmail);
+router.route('/contact').post(sendEmailContact);
 
 module.exports = router;

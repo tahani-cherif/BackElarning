@@ -95,3 +95,52 @@ exports.sendEmail=(req,res,next)=> {
         });
       });
   }
+
+  // @desc    contcat
+// @route   GET /api/auth/contact
+// @access  Public
+exports.sendEmailContact=(req,res,next)=> {
+  const transporter = nodemailer.createTransport({
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
+    auth: {
+      user: 'cheriftahani92@gmail.com',
+      pass: 'gnaqzqjdlqzyhxyl',
+    },
+  });
+  
+ const mail_configs = {
+      from:req.body.email,
+      to:"cheriftahani92@gmail.com",
+      subject: req.body.object,
+      html: `<!DOCTYPE html>
+              <html lang="en" >
+              <head>
+                <meta charset="UTF-8">
+                <title>${req.body.object}</title>
+                
+              </head>
+              <body>
+              <!-- partial:index.partial.html -->
+              <div style="font-family: Helvetica,Arial,sans-serif;min-width:1000px;overflow:auto;line-height:2">
+                <div style="margin:50px auto;width:70%;padding:20px 0">
+                  <p style="font-size:1.1em">Bonjour,</p>
+                  <p>${req.body.desc}</p>
+                </div>
+              </div>
+              <!-- partial -->
+                
+              </body>
+              </html>`,
+      };
+      transporter.sendMail(mail_configs, function (error, info) {
+        if (error) {
+          return  next(new ApiError(error,404)); 
+        }
+        return res.status(200).json({
+          success: true,
+          data: 'Email sent',
+        });
+      });
+  }
