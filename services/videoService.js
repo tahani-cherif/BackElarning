@@ -1,4 +1,4 @@
-const videomodel = require("../models/videoModel");
+const Video = require("../models/videoModel");
 const courmodel = require("../models/courModel");
 const asyncHandler = require("express-async-handler");
 const ApiError = require("../utils/apiError");
@@ -7,7 +7,8 @@ const ApiError = require("../utils/apiError");
 // @route   GET api/video/
 // @access  Private
 exports.getvideos = asyncHandler(async (req, res) => {
-  const video = await videomodel.findAll();
+  const video = await Video.findAll();
+  console.log(video)
   res.status(200).json({ results: video.length, data: video });
 });
 
@@ -16,7 +17,7 @@ exports.getvideos = asyncHandler(async (req, res) => {
 // @access  Private
 exports.getvideo = asyncHandler(async (req, res, next) => {
   const { id } = req.params;
-  const video = await videomodel.findById(id).populate({
+  const video = await Video.findById(id).populate({
     path: "coatch",
     select: ["fullName", "_id"],
   });
@@ -32,9 +33,10 @@ exports.getvideo = asyncHandler(async (req, res, next) => {
 exports.createvideo = asyncHandler(async (req, res) => {
   const body = req.body;
   body.videoUrl = req.file.path;
-  const video = await videomodel.create(body);
+  const video = await Video.create(body);
   const cour = await courmodel.findById(body.course);
   cour.videoId.push(video._id);
+  cour.section.push({videoId:video._id});
   await courmodel.findByIdAndUpdate(body.course, cour);
   res.status(201).json({ data: video });
 });
@@ -45,7 +47,7 @@ exports.createvideo = asyncHandler(async (req, res) => {
 exports.updatevideo = asyncHandler(async (req, res, next) => {
   const { id } = req.params;
   req.body.videoUrl = req?.file?.path || req.body.videoUrl;
-  const video = await videomodel.findOneAndUpdate({ _id: id }, req.body, {
+  const video = await Video.findOneAndUpdate({ _id: id }, req.body, {
     new: true,
   }); //return apre update
   if (!video) {
@@ -58,10 +60,13 @@ exports.updatevideo = asyncHandler(async (req, res, next) => {
 // @route   GET api/video/bycour/id
 // @access  Private
 exports.getvideos = asyncHandler(async (req, res) => {
-  const video = await videomodel.find({ course: req.params.id }).populate({
+  const video = await Video.find({ course: req.params.id }).populate({
     path: "course",
     select: ["titre", "_id"],
   });
   console.log(video);
   res.status(200).json({ results: video.length, data: video });
 });
+
+
+

@@ -24,6 +24,10 @@ const VideosSchema = new mongoose.Schema({
         type: String,
         require:[true,'titre require'],
     },
+    type: {
+        type: String,
+        default:"video"   
+    },
     videoUrl:
     {
         type: String,

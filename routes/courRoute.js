@@ -17,7 +17,8 @@ const {getcours,
     countbyfomateur,
     getAllCoursesuser,
     getAllCourseformateur,
-    getcourssearchbyname
+    getcourssearchbyname,
+    getsection
     }=require('../services/courService');
 
 
@@ -26,6 +27,7 @@ const {upload}=require('../middlewares/imageMiddmeware')
 
 
 router.route("/getcoursearch").get(getcourssearchbyname)
+router.route("/getsection/:id").get(getsection)
 router.route('/count/').get(countcour)
 router.route('/top/').get(topcour)
 router.route('/countcourbyformateur/').get(countbyfomateur)

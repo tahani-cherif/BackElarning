@@ -60,7 +60,7 @@ app.use('/image', express.static('./image'))
 
 //static Images Folder
 
-app.use('/pdf', express.static('./pdf'))
+app.use('/exercice', express.static('./exercice'))
 
 //static Images video
 

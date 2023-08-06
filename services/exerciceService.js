@@ -35,6 +35,7 @@ exports.createexercice = asyncHandler(async (req, res) => {
   const exercice = await exercicemodel.create(body);
   const cour = await courmodel.findById(body.course);
   cour.pdfId.push(exercice._id);
+  cour.section.push({pdfId:exercice._id});
   await courmodel.findByIdAndUpdate(body.course, cour);
   res.status(201).json({ data: exercice });
 });

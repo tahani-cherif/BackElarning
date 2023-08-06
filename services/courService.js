@@ -1,5 +1,7 @@
 const courmodel=require('../models/courModel')
 const usermodel=require('../models/userModale')
+const exercicemodel=require('../models/exerciceModel')
+const videpmodel=require('../models/videoModel')
 const asyncHandler = require('express-async-handler')
 const ApiError=require('../utils/apiError')
 const bcrypt=require('bcryptjs');
@@ -19,6 +21,29 @@ exports.getcours=asyncHandler(async(req,res) => {
     res.status(200).json({results:cour.length,page,data:cour})
   });
 
+
+  // @desc    Get all cour
+// @route   GET api/cour/
+// @access  Private
+exports.getsection=asyncHandler(async(req,res) => {
+  const cour = await courmodel.findById(req.params.id)
+  let sections=[];
+  cour?.section.map(async( section,index) =>{
+     if(section?.pdfId ){
+      console.log("test")
+        const pdf=await exercicemodel.findById(section?.pdfId)
+        // .then(secc=>section !=[] ? section=[...section,secc] :section=[secc])
+        sections.push({...pdf._doc,order:index+1})
+        // section=pdf
+     }else{
+      const video=await videpmodel.findById(section?.videoId)
+         sections.push({...video._doc,order:index+1})
+     }
+  })
+  setTimeout(() => {
+    res.status(200).json({data:sections})
+  }, 1000);
+});
 // @desc    Get specific cour by d
 // @route   GET api/cour/:id
 // @access  Private

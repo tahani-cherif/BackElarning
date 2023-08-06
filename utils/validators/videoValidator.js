@@ -17,8 +17,8 @@ exports.createvideoValidator=[
                  .isNumeric().withMessage('must be a number'),
     check('description').notEmpty().withMessage('description required'),
     check('categorie').notEmpty().withMessage('categorie required'),
-    check('ordre').notEmpty().withMessage('ordre required')
-                         .isNumeric().withMessage('must be a number'),
+    // check('ordre').notEmpty().withMessage('ordre required')
+    //                      .isNumeric().withMessage('must be a number'),
     check('course').notEmpty().withMessage('course required')
                    .isMongoId().withMessage('Invalid course id '),
     check('coatch').notEmpty().withMessage('coatch required')
@@ -33,8 +33,8 @@ exports.updatevideoValidator=[
                  .isNumeric().withMessage('must be a number'),
     check('description').optional().notEmpty().withMessage('description required'),
     check('categorie').optional().notEmpty().withMessage('categorie required'),
-    check('ordre').optional().notEmpty().withMessage('ordre required')
-                         .isNumeric().withMessage('must be a number'),
+    // check('ordre').optional().notEmpty().withMessage('ordre required')
+    //                      .isNumeric().withMessage('must be a number'),
     check('course').optional().notEmpty().withMessage('course required')
                    .isMongoId().withMessage('Invalid course id '),
     check('coatch').optional().notEmpty().withMessage('coatch required')

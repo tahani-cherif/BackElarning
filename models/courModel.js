@@ -15,6 +15,11 @@ const CourseSchema = new mongoose.Schema({
         require:[true,'description require'],
         trim: true
     },
+    langue: {
+        type: String,
+        require:[true,'langue require'],
+        trim: true
+    },
     categorie: { 
         type: String,
         required: true,
@@ -41,6 +46,16 @@ const CourseSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'video'
     }],
+    section: [{
+        videoId:{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'video'
+        },
+        pdfId: {
+            type: mongoose.Types.ObjectId,
+            ref: "exercice",
+        },
+    }],
     pdfId:[ {
         type: mongoose.Types.ObjectId,
         ref: "exercice",
@@ -64,6 +79,10 @@ const CourseSchema = new mongoose.Schema({
         default:0   
     },
     isfinish: {
+        type: Boolean,
+        default: false
+    },
+    onhold: {
         type: Boolean,
         default: false
     }
